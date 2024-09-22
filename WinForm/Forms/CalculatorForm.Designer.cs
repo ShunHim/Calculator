@@ -44,7 +44,7 @@
             Controls.Add(blazorWebView1);
             Name = "CalculatorForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "CalculatorForm";
+            Text = AppConst.AppDispName;
             ResumeLayout(false);
         }
 
