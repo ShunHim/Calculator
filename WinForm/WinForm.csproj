@@ -9,22 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="log4net.config" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="log4net" Version="3.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebView.WindowsForms" Version="8.0.90" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\css\" />
-    <Folder Include="wwwroot\js\" />
-    <Folder Include="wwwroot\lib\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="log4net.config" />
+    <Content Update="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
