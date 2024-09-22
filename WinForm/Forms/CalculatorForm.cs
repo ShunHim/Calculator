@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Components.WebView.WindowsForms;
 using Microsoft.Extensions.DependencyInjection;
 using WinForm.Components;
+using WinForm.Services;
 
 namespace WinForm.Forms {
     public partial class CalculatorForm : Form {
@@ -14,6 +15,12 @@ namespace WinForm.Forms {
             services.AddSingleton(provider => LogManager.GetLogger(typeof(CalculatorForm)));
             //電卓ビューモデル
             services.AddSingleton<CalculatorVM>();
+            //コマンドパターン
+            services.AddSingleton<AddCommand>();
+            services.AddSingleton<SubtractCommand>();
+            services.AddSingleton<MultiplyCommand>();
+            services.AddSingleton<DivideCommand>();
+            services.AddSingleton<CalcInvoker>();
             #endregion
             #region Blazor構成
 #if DEBUG
