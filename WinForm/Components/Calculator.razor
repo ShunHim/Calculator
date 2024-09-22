@@ -28,11 +28,13 @@
     <div class="btn-grid w-100" style="height: 70svh;">
 
         @*1列*@
-        <button class="@btnComClass @btnTheme2 border-0" @onclick="()=> OnClick(ClickType.Delete)" id="@($"btn_{ClickType.Delete.ToString()}")" style="grid-column: span 2;">
+        <button class="@btnComClass @btnTheme2 border-0" @onclick="()=> OnClick(ClickType.Delete)" id="@($"btn_{ClickType.Delete.ToString()}")"
+                data-bs-toggle="tooltip" title="クリア" style="grid-column: span 2;">
             @*クリア*@
             <i class="fa-solid fa-c"></i>
         </button>
-        <button class="@btnComClass @btnTheme2 border-0" @onclick="()=> OnClick(ClickType.Backspace)" id="@($"btn_{ClickType.Backspace.ToString()}")">
+        <button class="@btnComClass @btnTheme2 border-0" @onclick="()=> OnClick(ClickType.Backspace)" id="@($"btn_{ClickType.Backspace.ToString()}")"
+                 data-bs-toggle="tooltip" title="1文字削除">
             @*バックスペース*@
             <i class="fa-solid fa-delete-left"></i>
         </button>
