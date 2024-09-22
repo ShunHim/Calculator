@@ -21,3 +21,36 @@
     padding-bottom: 4px;
     align-self: flex-end;
 }
+
+/*色override*/
+/*Light*/
+.bg-light {
+    background-color: rgb(32, 32, 32) !important;
+}
+.btn-main-light{
+    background-color: lightblue;
+}
+.btn-sub-light {
+    background-color: lightblue;
+}
+.btn-acce-light {
+    background-color: rgb(60, 60, 60) !important;
+}
+/*Dark*/
+.bg-dark {
+    background-color: rgb(32, 32, 32) !important;
+}
+.btn-main-dark {
+    background-color: rgb(50, 50, 50) !important;
+}
+.btn-sub-dark {
+    background-color: rgb(60, 60, 60) !important;
+}
+.btn-acce-dark {
+    background-color: darkgray !important;
+    color: black;
+}
+/*押下時の色をわかりやすく*/
+.btn-press:focus{
+    opacity:.7;
+}

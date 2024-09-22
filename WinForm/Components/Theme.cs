@@ -26,9 +26,9 @@
             Type = ThemeType.Light;
             Bg = "bg-white";
             Tx = "text-dark";
-            Btn1 = "btn-secondary btn-main-light";
-            Btn2 = "btn-secondary btn-sub-light";
-            Btn3 = "btn-primary";
+            Btn1 = "btn-secondary btn-sub-light";
+            Btn2 = "btn-secondary btn-main-light";
+            Btn3 = "btn-secondary btn-acce-light";
         }
         /// <summary>
         /// ダークテーマ
@@ -37,9 +37,9 @@
             Type = ThemeType.Dark;
             Bg = "bg-dark";
             Tx = "text-light";
-            Btn1 = "btn-secondary btn-main-dark";
-            Btn2 = "btn-secondary btn-sub-dark";
-            Btn3 = "btn-success";
+            Btn1 = "btn-secondary btn-sub-dark";
+            Btn2 = "btn-secondary btn-main-dark";
+            Btn3 = "btn-secondary btn-acce-dark";
         }
     }
 }
