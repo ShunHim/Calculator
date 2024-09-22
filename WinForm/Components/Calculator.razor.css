@@ -25,16 +25,19 @@
 /*色override*/
 /*Light*/
 .bg-light {
-    background-color: rgb(32, 32, 32) !important;
+    background-color: rgb(243, 243, 243) !important;
 }
-.btn-main-light{
-    background-color: lightblue;
+.btn-main-light {
+    background-color: silver !important;
+    color: black;
 }
 .btn-sub-light {
-    background-color: lightblue;
+    background-color: gainsboro !important;
+    color: black;
 }
 .btn-acce-light {
-    background-color: rgb(60, 60, 60) !important;
+    background-color: dimgray !important;
+    color: white;
 }
 /*Dark*/
 .bg-dark {
