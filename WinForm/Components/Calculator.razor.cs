@@ -32,6 +32,7 @@ namespace WinForm.Components {
             await _js.InvokeVoidAsync("addKeyListener", DotNetObjectReference.Create(this));
             //ツールチップ初期化
             await _js.InvokeVoidAsync("toolInit", null);
+            _logger.Debug($"初期表示完了");
         }
         /// <summary>
         /// キーイベントトリガー

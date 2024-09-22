@@ -173,6 +173,11 @@ namespace WinForm.Components {
         /// 1文字削除
         /// </summary>
         private void BackspaceInput() {
+            if (EnterFlg) {
+                AllClear();
+                EnterFlg = false;
+                return;
+            }
             if (_receptType == ReceptType.New) {
                 TxInput = "0";
                 return;
