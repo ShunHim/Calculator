@@ -1,5 +1,3 @@
-using WinForm.Consts;
-
 namespace WinForm {
     internal static class Program {
         [STAThread]
@@ -12,7 +10,7 @@ namespace WinForm {
             }
             #endregion
             ApplicationConfiguration.Initialize();
-            Application.Run();
+            Application.Run(new CalculatorForm());
         }
     }
 }
