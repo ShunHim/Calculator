@@ -43,6 +43,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(blazorWebView1);
             Name = "CalculatorForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CalculatorForm";
             ResumeLayout(false);
         }
