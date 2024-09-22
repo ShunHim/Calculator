@@ -1,14 +1,18 @@
+using WinForm.Consts;
+
 namespace WinForm {
     internal static class Program {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main() {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
+            #region 多重起動の禁止
+            Mutex mutex = new(false, AppConst.AppName);
+            if (!mutex.WaitOne(0, false)) {
+                MessageBox.Show($"{AppConst.AppDispName}は既に起動しています。");
+                return;
+            }
+            #endregion
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run();
         }
     }
 }
