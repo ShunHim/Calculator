@@ -1,1 +1,126 @@
-﻿<h3>Calculator</h3>
+﻿@{
+    string btnComClass = "btn shadow-sm bg-gradient opacity-75";
+
+    string bg = _vm.Theme.Bg;
+    string tx = _vm.Theme.Tx;
+    string btnTheme1 = _vm.Theme.Btn1;
+    string btnTheme2 = _vm.Theme.Btn2;
+    string btnTheme3 = _vm.Theme.Btn3;
+}
+@*メインコンテナ*@
+<div class="container-fluid px-1 mainBlock @bg">
+    @*機能ブロック*@
+    <div class="px-0 pt-1">
+        <button class="@btnComClass @btnTheme1 btn-sm" data-bs-toggle="tooltip" title="テーマ切り替え"><i class="fa-solid fa-palette"></i></button>
+    </div>
+    @*数式表示ブロック*@
+    <div class="px-2 text-end text-truncate opacity-50 @tx" style="font-size: 12px;">
+        @_vm.TxFomula
+    </div>
+    @*入力表示ブロック*@
+    <div class="px-2 @tx text-truncate text-end" style="font-size: 34px;">
+        @_vm.TxInput
+    </div>
+    @*空間補正ブロック*@
+    <div class="voidBlock">
+    </div>
+    @*ボタンブロック*@
+    <div class="btn-grid w-100" style="height: 70svh;">
+
+        @*1列*@
+        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.Delete.ToString()}")" style="grid-column: span 2;">
+            @*クリア*@
+            <i class="fa-solid fa-c"></i>
+        </button>
+        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.Backspace.ToString()}")">
+            @*バックスペース*@
+            <i class="fa-solid fa-delete-left"></i>
+        </button>
+        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.KeyDivide.ToString()}")">
+            @*割る*@
+            <i class="fa-solid fa-divide"></i>
+        </button>
+        @*2列*@
+        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.Key7.ToString()}")">
+            7
+        </button>
+        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.Key8.ToString()}")">
+            8
+        </button>
+        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.Key9.ToString()}")">
+            9
+        </button>
+        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.KeyMultiply.ToString()}")">
+            @*掛ける*@
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        @*3列*@
+        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.Key4.ToString()}")">
+            4
+        </button>
+        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.Key5.ToString()}")">
+            5
+        </button>
+        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.Key6.ToString()}")">
+            6
+        </button>
+        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.KeySubstract.ToString()}")">
+            @*マイナス*@
+            <i class="fa-solid fa-minus"></i>
+        </button>
+        @*4列*@
+        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.Key1.ToString()}")">
+            1
+        </button>
+        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.Key2.ToString()}")">
+            2
+        </button>
+        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.Key3.ToString()}")">
+            3
+        </button>
+        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.KeyAdd.ToString()}")">
+            @*プラス*@
+            <i class="fa-solid fa-plus"></i>
+        </button>
+        @*5列*@
+        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.KeyPM.ToString()}")">
+            @*プラスマイナス反転*@
+            <i class="fa-solid fa-plus-minus"></i>
+        </button>
+        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.Key0.ToString()}")">
+            0
+        </button>
+        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.KeyDot.ToString()}")">
+            .
+        </button>
+        <button class="@btnComClass @btnTheme3" id="@($"btn_{ClickType.Enter.ToString()}")">
+            @*イコール*@
+            <i class="fa-solid fa-equals"></i>
+        </button>
+    </div>
+</div>
+<style>
+    /*ブロック*/
+    .mainBlock {
+        display: flex;
+        flex-direction: column;
+        height: 100svh;
+        width: 100%;
+    }
+
+    .voidBlock {
+        flex-grow: 1;
+    }
+
+    .btn-grid {
+        align-self: flex-end;
+    }
+
+    .btn-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4px;
+        padding-bottom: 4px;
+        align-self: flex-end;
+    }
+</style>
