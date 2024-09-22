@@ -11,7 +11,7 @@
 <div class="container-fluid px-1 mainBlock @bg">
     @*機能ブロック*@
     <div class="px-0 pt-1">
-        <button class="@btnComClass @btnTheme1 btn-sm" data-bs-toggle="tooltip" title="テーマ切り替え"><i class="fa-solid fa-palette"></i></button>
+        <button class="@btnComClass @btnTheme1 btn-sm" data-bs-toggle="tooltip" title="テーマ切り替え" @onclick="ThemeChange"><i class="fa-solid fa-palette"></i></button>
     </div>
     @*数式表示ブロック*@
     <div class="px-2 text-end text-truncate opacity-50 @tx" style="font-size: 12px;">
@@ -28,72 +28,72 @@
     <div class="btn-grid w-100" style="height: 70svh;">
 
         @*1列*@
-        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.Delete.ToString()}")" style="grid-column: span 2;">
+        <button class="@btnComClass @btnTheme1" @onclick="()=> OnClick(ClickType.Delete)" id="@($"btn_{ClickType.Delete.ToString()}")" style="grid-column: span 2;">
             @*クリア*@
             <i class="fa-solid fa-c"></i>
         </button>
-        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.Backspace.ToString()}")">
+        <button class="@btnComClass @btnTheme1" @onclick="()=> OnClick(ClickType.Backspace)" id="@($"btn_{ClickType.Backspace.ToString()}")">
             @*バックスペース*@
             <i class="fa-solid fa-delete-left"></i>
         </button>
-        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.KeyDivide.ToString()}")">
+        <button class="@btnComClass @btnTheme1" @onclick="()=> OnClick(ClickType.KeyDivide)" id="@($"btn_{ClickType.KeyDivide.ToString()}")">
             @*割る*@
             <i class="fa-solid fa-divide"></i>
         </button>
         @*2列*@
-        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.Key7.ToString()}")">
+        <button class="@btnComClass @btnTheme1" @onclick="()=> OnClick(ClickType.Key7)" id="@($"btn_{ClickType.Key7.ToString()}")">
             7
         </button>
-        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.Key8.ToString()}")">
+        <button class="@btnComClass @btnTheme1" @onclick="()=> OnClick(ClickType.Key8)" id="@($"btn_{ClickType.Key8.ToString()}")">
             8
         </button>
-        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.Key9.ToString()}")">
+        <button class="@btnComClass @btnTheme1" @onclick="()=> OnClick(ClickType.Key9)" id="@($"btn_{ClickType.Key9.ToString()}")">
             9
         </button>
-        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.KeyMultiply.ToString()}")">
+        <button class="@btnComClass @btnTheme1" @onclick="()=> OnClick(ClickType.KeyMultiply)" id="@($"btn_{ClickType.KeyMultiply.ToString()}")">
             @*掛ける*@
             <i class="fa-solid fa-xmark"></i>
         </button>
         @*3列*@
-        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.Key4.ToString()}")">
+        <button class="@btnComClass @btnTheme1" @onclick="()=> OnClick(ClickType.Key4)" id="@($"btn_{ClickType.Key4.ToString()}")">
             4
         </button>
-        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.Key5.ToString()}")">
+        <button class="@btnComClass @btnTheme1" @onclick="()=> OnClick(ClickType.Key5)" id="@($"btn_{ClickType.Key5.ToString()}")">
             5
         </button>
-        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.Key6.ToString()}")">
+        <button class="@btnComClass @btnTheme1" @onclick="()=> OnClick(ClickType.Key6)" id="@($"btn_{ClickType.Key6.ToString()}")">
             6
         </button>
-        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.KeySubstract.ToString()}")">
+        <button class="@btnComClass @btnTheme1" @onclick="()=> OnClick(ClickType.KeySubstract)" id="@($"btn_{ClickType.KeySubstract.ToString()}")">
             @*マイナス*@
             <i class="fa-solid fa-minus"></i>
         </button>
         @*4列*@
-        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.Key1.ToString()}")">
+        <button class="@btnComClass @btnTheme1" @onclick="()=> OnClick(ClickType.Key1)" id="@($"btn_{ClickType.Key1.ToString()}")">
             1
         </button>
-        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.Key2.ToString()}")">
+        <button class="@btnComClass @btnTheme1" @onclick="()=> OnClick(ClickType.Key2)" id="@($"btn_{ClickType.Key2.ToString()}")">
             2
         </button>
-        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.Key3.ToString()}")">
+        <button class="@btnComClass @btnTheme1" @onclick="()=> OnClick(ClickType.Key3)" id="@($"btn_{ClickType.Key3.ToString()}")">
             3
         </button>
-        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.KeyAdd.ToString()}")">
+        <button class="@btnComClass @btnTheme1" @onclick="()=> OnClick(ClickType.KeyAdd)" id="@($"btn_{ClickType.KeyAdd.ToString()}")">
             @*プラス*@
             <i class="fa-solid fa-plus"></i>
         </button>
         @*5列*@
-        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.KeyPM.ToString()}")">
+        <button class="@btnComClass @btnTheme1" @onclick="()=> OnClick(ClickType.KeyPM)" id="@($"btn_{ClickType.KeyPM.ToString()}")">
             @*プラスマイナス反転*@
             <i class="fa-solid fa-plus-minus"></i>
         </button>
-        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.Key0.ToString()}")">
+        <button class="@btnComClass @btnTheme1" @onclick="()=> OnClick(ClickType.Key0)" id="@($"btn_{ClickType.Key0.ToString()}")">
             0
         </button>
-        <button class="@btnComClass @btnTheme1" id="@($"btn_{ClickType.KeyDot.ToString()}")">
+        <button class="@btnComClass @btnTheme1" @onclick="()=> OnClick(ClickType.KeyDot)" id="@($"btn_{ClickType.KeyDot.ToString()}")">
             .
         </button>
-        <button class="@btnComClass @btnTheme3" id="@($"btn_{ClickType.Enter.ToString()}")">
+        <button class="@btnComClass @btnTheme3" @onclick="()=> OnClick(ClickType.Enter)" id="@($"btn_{ClickType.Enter.ToString()}")">
             @*イコール*@
             <i class="fa-solid fa-equals"></i>
         </button>
